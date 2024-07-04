@@ -16,12 +16,12 @@ const {
 } = require("../utils/validators/productValidator");
 
 const authController = require("../controllers/authController");
-const reviewsRoute = require("./reviewRoute")
+const reviewsRoute = require("./reviewRoute");
 
 const router = express.Router();
 
 // Nested route
-router.use("/:productId/reviews", reviewsRoute)
+router.use("/:productId/reviews", reviewsRoute);
 
 router
   .route("/")

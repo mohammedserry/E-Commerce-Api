@@ -3,8 +3,8 @@ const factory = require("./handlersFactory");
 
 // Nested route (Create)
 // POST /api/v1/categories/:categoryId/subcategories
-exports.setCategoryIdToBody = (req, res, next) =>{
-  if(!req.body.categoryId) req.body.category = req.params.categoryId;
+exports.setCategoryIdToBody = (req, res, next) => {
+  if (!req.body.categoryId) req.body.category = req.params.categoryId;
   next();
 };
 
@@ -12,7 +12,7 @@ exports.setCategoryIdToBody = (req, res, next) =>{
 // GET /api/v1/categories/:categoryId/subcategories
 exports.createFilterObj = (req, res, next) => {
   let filterObject = {};
-  if(req.params.categoryId) filterObject = { category : req.params.categoryId};
+  if (req.params.categoryId) filterObject = { category: req.params.categoryId };
   req.filterObj = filterObject;
   next();
 };
@@ -41,5 +41,3 @@ exports.updateSubCategory = factory.updateOne(SubCategory);
 // @route   DELETE /api/v1/subcategories/:id
 // @access  Private
 exports.deleteSubCategory = factory.deleteOne(SubCategory);
-
-

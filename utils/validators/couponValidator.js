@@ -21,9 +21,9 @@ exports.createCouponValidator = [
       // Check if coupon with the same name already exists
       const existingCoupon = await Coupon.findOne({ name });
       if (existingCoupon) {
-          return Promise.reject(new Error("Coupon name already exists")) ;
+        return Promise.reject(new Error("Coupon name already exists"));
       }
-  }),
+    }),
 
   check("expire")
     .notEmpty()
@@ -51,9 +51,9 @@ exports.updateCouponValidator = [
       // Check if coupon with the same name already exists
       const existingCoupon = await Coupon.findOne({ name });
       if (existingCoupon) {
-          return Promise.reject(new Error("Coupon name already exists")) ;
+        return Promise.reject(new Error("Coupon name already exists"));
       }
-  }),
+    }),
 
   check("expire")
     .optional()

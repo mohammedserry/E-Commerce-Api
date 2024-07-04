@@ -24,4 +24,4 @@ exports.updateCoupon = factory.updateOne(Coupon);
 // @desc    Delete specific coupon
 // @route   DELETE /api/v1/coupons/:id
 // @access  Private/Admin-Manager
-exports.deleteCoupon= factory.deleteOne(Coupon);
+exports.deleteCoupon = factory.deleteOne(Coupon);

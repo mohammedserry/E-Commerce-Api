@@ -23,6 +23,6 @@ router.post("/forgotPassword", forgotPassword);
 
 router.post("/verifyResetCode", verifyPassResetCode);
 
-router.patch("/resetPassword", resetPassword)
+router.patch("/resetPassword", resetPassword);
 
 module.exports = router;

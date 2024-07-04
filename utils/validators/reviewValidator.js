@@ -56,12 +56,12 @@ exports.updateReviewValidator = [
 ];
 
 exports.deleteReviewValidator = [
-  check('id')
+  check("id")
     .isMongoId()
-    .withMessage('Invalid Review id format')
+    .withMessage("Invalid Review id format")
     .custom((val, { req }) => {
       // Check review ownership before update
-      if (req.user.role === 'user') {
+      if (req.user.role === "user") {
         return Review.findById(val).then((review) => {
           if (!review) {
             return Promise.reject(

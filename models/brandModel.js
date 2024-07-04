@@ -27,12 +27,12 @@ const setImageUrl = (doc) => {
 };
 
 // findOne, findAll and updateOne
-brandSchema.post("init", function (doc) {
+brandSchema.post("init", (doc) => {
   setImageUrl(doc);
 });
 
 // createOne
-brandSchema.post("save", function (doc) {
+brandSchema.post("save", (doc) => {
   setImageUrl(doc);
 });
 
