@@ -7,6 +7,7 @@ const {
   updateOrderToDelivered,
   updateOrderToPaid,
   checkoutSession,
+  webhookCheckout
 } = require("../controllers/orderController");
 
 const authController = require("../controllers/authController");
@@ -44,4 +45,9 @@ router.patch(
   updateOrderToDelivered
 );
 
+router.post(
+  "/webhook-checkout",
+  express.raw({ type: "application/json" }),
+  webhookCheckout
+);
 module.exports = router;
