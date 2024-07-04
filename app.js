@@ -10,7 +10,6 @@ const compression = require("compression");
 dotenv.config({ path: "config.env" });
 const AppError = require("./utils/appError");
 const globalError = require("./middlewares/errorMiddleware");
-// const webhookCheckout = require("./controllers/orderController");
 const dbConnection = require("./config/database");
 
 // database connection
@@ -25,9 +24,6 @@ app.options("*", cors());
 
 // compress all responses
 app.use(compression());
-
-// Checkout webhook
-
 
 // middlewares
 app.use(express.json());
