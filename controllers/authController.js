@@ -5,6 +5,7 @@ const crypto = require("crypto");
 const AppError = require("../utils/appError");
 const sendEmail = require("../utils/sendEmail");
 const generateToken = require("../utils/generateToken");
+const {sanitizeUser} = require("../utils/sanitizeData");
 const User = require("../models/userModel");
 
 // @desc    signup
@@ -21,7 +22,7 @@ exports.signup = asyncHandler(async (req, res, next) => {
   // 2- Generate token
   const token = generateToken(user._id);
 
-  res.status(201).json({ data: user, token });
+  res.status(201).json({ data: sanitizeUser(user), token });
 });
 
 // @desc    login
@@ -37,7 +38,7 @@ exports.login = asyncHandler(async (req, res, next) => {
   // 3) generate token
   const token = generateToken(user._id);
 
-  res.status(201).json({ data: user, token });
+  res.status(201).json({ data: sanitizeUser(user), token });
 });
 
 // @desc   make sure the user is logged in
