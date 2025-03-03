@@ -79,6 +79,10 @@ const mountRoutes = require("./routes");
 // Mount Routes
 mountRoutes(app);
 
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Welcome to the API!" });
+});
+
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find this route: ${req.originalUrl}`, 400));
 });
