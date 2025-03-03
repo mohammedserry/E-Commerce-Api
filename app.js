@@ -74,7 +74,7 @@ app.use(
 app.use("/api/v1/auth/forgotPassword", limiter);
 
 // Routes
-const mountRoutes = require("./routes");
+const mountRoutes = require("./routes/index");
 
 // Mount Routes
 mountRoutes(app);
